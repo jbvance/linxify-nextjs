@@ -1,0 +1,26 @@
+{
+  "name": "nextjs-course",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "bcryptjs": "^2.4.3",
+    "got": "^11.8.2",
+    "metascraper": "^5.24.6",
+    "metascraper-logo": "^5.24.6",
+    "metascraper-title": "^5.24.6",
+    "mongodb": "^4.1.2",
+    "mongoose": "^6.0.7",
+    "next": "10.0.6",
+    "next-auth": "^3.29.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "url-parse": "^1.5.3",
+    "url-regex": "^5.0.0"
+  }
+}
