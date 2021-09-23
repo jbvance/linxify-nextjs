@@ -26,12 +26,25 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET':
       try {
-        const userLinks = await Links.find({ user: userId });
-        res.status(200).json({ userLinks });
-        return;
+        const userLinks = await Links.find({
+          user: userId
+        })
+          .populate('category')
+          .lean()
+          .populate('user', '_id username firstName lastName')
+          .sort({ createdAt: -1 });
+        return res.status(200).json({
+          data: userLinks
+        });
       } catch (error) {
-        return res.status(400).json({ success: false });
+        return res.status(500).json({
+          code: 500,
+          reason: 'ValidationError',
+          message,
+          location: 'Get Links'
+        });
       }
+
       break;
     default:
       res.status(400).json({ success: false });
